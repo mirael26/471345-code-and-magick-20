@@ -51,9 +51,10 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.textBaseline = 'bottom';
     ctx.fillText(players[i], CLOUD_X + GAP * 2 + (BAR_WIDTH + BAR_GAP) * i, CLOUD_Y + CLOUD_HEIGHT - GAP);
 
-    ctx.fillStyle = renderColor();
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = renderColor();
     }
 
     var barHeight = MAX_BAR_HEIGHT * (times[i] / maxTime);
